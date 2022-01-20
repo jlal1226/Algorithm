@@ -9,46 +9,36 @@ public class CroatiaAlphabet_2941 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = br.readLine();
         int cnt = 0;
+        int len = s.length();
+        for (int i = 0; i < len; i++) {
 
-        for (int i = 0; i < s.length(); i++) {
-            char tmp = s.charAt(i);
-            if (tmp == 'c') {
-                if (i < s.length() - 1){
+            char ch = s.charAt(i);
+
+            if (ch == 'c') {
+                if (i < len - 1){
                     if (s.charAt(i + 1) == '=' || s.charAt(i + 1) == '-') {
-                        i += 1;
+                        i++;
                     }
                 }
-            } else if (tmp == 'd') {
-                if (i < s.length() - 2) {
-                    if (s.charAt(i + 1) == 'z') {
-                        if (s.charAt(i + 2) == '=') {
-                            i += 1;
-                        }
+            } else if (ch == 'd' && i < len - 1) {
+                if (s.charAt(i + 1) == 'z' && i < len - 2) {
+                    if (s.charAt(i + 2) == '=') {
+                        i += 2;
                     }
                 }
                 else if (s.charAt(i + 1) == '-') {
-                    if (i < s.length() - 1) {
-                        i += 1;
-                    }
+                        i++;
                 }
             }
-            else if (tmp == 'l' && s.charAt(i + 1) == 'j'){
-                if (i < s.length() - 1) {
-                    i += 1;
-                }
-            }
-            else if (tmp == 'n' && s.charAt(i + 1) == 'j') {
-                if (i < s.length() - 1)
+            else if ((ch == 'l' || ch == 'n') && i < len - 1){
+                if (s.charAt(i+1) == 'j')
                     i += 1;
             }
-            else if (tmp == 's' && s.charAt(i + 1) == '=') {
-                if (i < s.length() - 1)
+            else if ((ch == 's' || ch == 'z') && i < len - 1) {
+                if (s.charAt(i+1) == '=')
                     i += 1;
             }
-            else if (tmp == 'z' && s.charAt(i + 1) == '=')
-                if (i < s.length() - 1)
-                    i += 1;
-
+            cnt++;
         }
         System.out.println(cnt);
     }
