@@ -1,29 +1,41 @@
 package Programmers;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 
 public class FailedPlayer {
     public static void main(String[] args) {
-        String[] a = {"leo", "kiki", "eden"};
-        String[] b = {"eden", "kiki"};
-        solution(a, b);
+        String[] a = {"mislav", "stanko", "mislav", "ana"};
+        String[] b = {"stanko", "ana", "mislav"};
+        System.out.print(solution(a, b));
     }
 
     static String solution(String[] participant, String[] completion) {
         String answer = "";
-        Set<String> set1 = new HashSet<>(Arrays.asList(participant));
-        Set<String> set2 = new HashSet<>(Arrays.asList(completion));
+        Map<String, Integer> map = new HashMap<>();
 
-        for (String s : set1) {
-            String str = String.valueOf(s);
-            if (!set2.contains(str)) {
-                answer = str;
+        for (String str : participant) {
+            if (!map.containsKey(str)) {
+                map.put(str, 1);
+            } else {
+                map.put(str, map.get(str) + 1);
             }
+            // getOrDefault() 활용
+            // map.put(str, map.getOrDefault(str, 0) + 1);
         }
 
+        for (String str : completion) {
+            map.put(str, map.get(str) - 1);
+        }
+
+        for (String key : map.keySet()) {
+            if (map.get(key) != 0) {
+                answer = key;
+                break;
+            }
+        }
         return answer;
     }
+
+
 }
