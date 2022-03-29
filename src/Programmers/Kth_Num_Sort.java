@@ -44,6 +44,7 @@ public class Kth_Num_Sort {
         }
         result.add(list.get(target - 1));
     }
+
     private static void mergeSort(int[] arr) {
         int len = arr.length;
         buff = new int[len];

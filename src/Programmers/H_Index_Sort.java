@@ -7,6 +7,7 @@ public class H_Index_Sort {
         int[] arr = {1000,1000,1000,1000,1000};
         System.out.print(solution(arr));
     }
+    // 1, 1, 1, 0, 0
     public static int solution(int[] citations) {
         int answer = 0;
         int n = citations.length;
