@@ -2,11 +2,11 @@ package Programmers;
 
 import java.util.*;
 
-class Node {
+class PrintNode {
     private int index;
     private int p;
 
-    public Node(int index, int p) {
+    public PrintNode(int index, int p) {
         this.index = index;
         this.p = p;
     }
@@ -39,15 +39,15 @@ public class Printer {
     public static int solution(int[] priorities, int location) {
         int answer = 0;
         int len = priorities.length;
-        Node node;
-        List<Node> list = new Vector<>();
-        List<Node> result = new ArrayList<>();
+        PrintNode node;
+        List<PrintNode> list = new Vector<>();
+        List<PrintNode> result = new ArrayList<>();
         for (int i = 0; i < priorities.length; i++) {
-            node = new Node(i, priorities[i]);
+            node = new PrintNode(i, priorities[i]);
             list.add(node);
         }
         while (result.size() != len) {
-            Node n = list.get(0);
+            PrintNode n = list.get(0);
             list.remove(0);
             if (check(n, list)) {
                 result.add(n);
@@ -65,9 +65,9 @@ public class Printer {
         return answer;
     }
 
-    public static boolean check(Node n, List<Node> list) {
+    public static boolean check(PrintNode n, List<PrintNode> list) {
         for (int i = 0; i < list.size(); i++) {
-            Node tmp = list.get(i);
+            PrintNode tmp = list.get(i);
             if (n.getP() < tmp.getP()) {
                 return false;
             }
