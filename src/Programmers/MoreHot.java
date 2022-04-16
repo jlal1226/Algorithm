@@ -21,6 +21,7 @@ public class MoreHot {
         for (int i : scoville) {
             q.offer(i);
         }
+
         while (!q.isEmpty()) {
             if (q.size() == 1 && q.peek() < K) {
                 return -1;

@@ -15,16 +15,8 @@ class PrintNode {
         return index;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
-    }
-
     public int getP() {
         return p;
-    }
-
-    public void setP(int p) {
-        this.p = p;
     }
 }
 public class Printer {
@@ -66,8 +58,7 @@ public class Printer {
     }
 
     public static boolean check(PrintNode n, List<PrintNode> list) {
-        for (int i = 0; i < list.size(); i++) {
-            PrintNode tmp = list.get(i);
+        for (PrintNode tmp : list) {
             if (n.getP() < tmp.getP()) {
                 return false;
             }

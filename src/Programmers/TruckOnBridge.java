@@ -25,14 +25,13 @@ public class TruckOnBridge {
             list.add(new TruckNode(truck_weights[i], 0));
         }
 
-        while (resultList.size() != len) {
+        while (!list.isEmpty() || !bridgeList.isEmpty()) { // resultList 안쓰고 !list.isEmpty() || !bridgeList.isEmpty() 가능
             day += 1;
             // 다리위 관리
             for (TruckNode n : bridgeList) {
                 if (n.getTime() == bridge_length) {
                     limit += n.getWeight();
                     bridgeList.remove(n);
-                    resultList.add(n);
                 }
                 n.addTime();
             }
@@ -52,8 +51,7 @@ public class TruckOnBridge {
             }
         }
 
-        answer = day;
-        return answer;
+        return day;
     }
 }
 
