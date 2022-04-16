@@ -16,7 +16,7 @@ public class FunctionDevelopment {
         int[] p4 = {1, 2, 1};
         int[] s4 = {100, 100, 100};
 
-        solution(p3,s3);
+        solution(p,s);
         NewSolution(p,s);
     }
     public static int[] solution(int[] progresses, int[] speeds) {
