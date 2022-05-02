@@ -42,8 +42,20 @@ public class Greedy_MakeMaxNum {
 
 
         // 0제거
+        String result = answer.toString();
+        int index = 0;
+        while (true) {
+
+            if (result.charAt(index) != '0') {
+                break;
+            }
+
+            index++;
+        }
+        int len = result.length();
+        result = result.substring(index, len);
 
 
-        return answer.toString();
+        return result;
     }
 }

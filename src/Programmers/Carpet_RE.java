@@ -13,6 +13,7 @@ public class Carpet_RE {
             if ((row + 2) * (col + 2) == brown + yellow) {
                 answer[0] = col + 2;
                 answer[1] = row + 2;
+                break;
             }
         }
 

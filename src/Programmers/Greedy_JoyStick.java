@@ -46,7 +46,7 @@ public class Greedy_JoyStick {
         int cnt = 0;
 
         // A의 연속성 판단
-        //
+        // BBBBAAAAABBA
         for (int i = 0; i < name.length(); i++) {
             if (name.charAt(i) == 'A') {
                 if (i < name.length() - 1 && name.charAt(i + 1) == 'A') {

@@ -2,8 +2,8 @@ package Programmers;
 
 public class Greedy_GymSuit {
     public static void main(String[] args) {
-        int n = 3;
-        int[] lost = {3};
+        int n = 5;
+        int[] lost = {2,4,5};
         int[] reserve = {1};
         int result = solution(n, lost, reserve);
         System.out.println(result);
@@ -26,14 +26,14 @@ public class Greedy_GymSuit {
          *  1 : 여분 옷 보우
          *  -1 : 옷 없음
          */
-
+        // 0 -1 0 -1 0
         for (int j : lost) {
             students[j - 1] += -1;
         }
         for (int i : reserve) {
             students[i - 1] += 1;
         }
-
+        // 1 -1 0 -1 1
         for (int i = 0; i < n; i++) {
             if (students[i]  == -1) {
                 // 왼쪽 조회
@@ -57,6 +57,4 @@ public class Greedy_GymSuit {
 
         return answer;
     }
-
-
 }
