@@ -1,6 +1,6 @@
 package Programmers;
 
-public class TargetNumber_DFS {
+public class DFS_TargetNumber {
     static int count = 0;
     public static void main(String[] args) {
         int[] arr= {4, 1, 2, 1};
