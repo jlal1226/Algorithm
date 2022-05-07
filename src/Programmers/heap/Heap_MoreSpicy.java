@@ -1,9 +1,8 @@
-package Programmers;
+package Programmers.heap;
 
-import java.util.Arrays;
 import java.util.PriorityQueue;
 
-public class MoreHot {
+public class Heap_MoreSpicy {
     public static void main(String[] args) {
         int[] s = {1, 1, 1, 1, 1, 1};
         int k = 7;
