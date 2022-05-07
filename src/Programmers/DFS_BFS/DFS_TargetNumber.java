@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.DFS_BFS;
 
 public class DFS_TargetNumber {
     static int count = 0;

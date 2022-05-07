@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.DFS_BFS;
 
 public class DFS_TargetNum_RE {
     public static void main(String[] args) {

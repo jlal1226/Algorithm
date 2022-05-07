@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.greedy;
 
 
 

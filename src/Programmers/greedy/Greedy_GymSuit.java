@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.greedy;
 
 public class Greedy_GymSuit {
     public static void main(String[] args) {

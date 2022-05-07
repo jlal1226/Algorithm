@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.DFS_BFS;
 
 import java.util.LinkedList;
 import java.util.Stack;
