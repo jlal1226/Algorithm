@@ -1,9 +1,6 @@
 package Programmers.greedy;
 
-
-
 import com.sun.xml.internal.ws.util.StringUtils;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -11,8 +8,8 @@ import java.util.Map;
 
 public class Greedy_MakeMaxNum {
     public static void main(String[] args) {
-        String num = "00001";
-        int k = 1;
+        String num = "4177252841";
+        int k = 4;
         String result = solution(num, k);
         System.out.println(result);
     }
@@ -24,12 +21,12 @@ public class Greedy_MakeMaxNum {
 
         int tmp = 0;
         while (true) {
+
             if (checkNum == 0) {
                 break;
             }
-            int max = 0;
+            int max = -1;
             for (int i = maxIndex; i <= number.length() - (checkNum); i++) {
-                int check = number.charAt(i) - '0';
                 if (number.charAt(i) - '0' > max) {
                     max = number.charAt(i) - '0';
                     tmp = i;
