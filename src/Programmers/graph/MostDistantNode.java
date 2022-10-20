@@ -8,10 +8,11 @@ import java.util.Queue;
 public class MostDistantNode {
     public static void main(String[] args) {
         int n = 6;
-        int[][] edge = {{3,6}, {4,3}, {3,2}, {1,3}, {1,2}, {2,4}, {5,2}};
+        int[][] edge = {{3, 6}, {4, 3}, {3, 2}, {1, 3}, {1, 2}, {2, 4}, {5, 2}};
         int result = solution(n, edge);
         System.out.println(result);
     }
+
     static boolean[] visited;
     static int[] values;
     static ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>();
@@ -46,6 +47,7 @@ public class MostDistantNode {
         bfsSearch();
         System.out.println(Arrays.toString(values));
         Arrays.sort(values);
+
         int max = 0;
         for (int i = n; i > 1; i--) {
             if (values[i] < 99999) {
@@ -56,10 +58,10 @@ public class MostDistantNode {
 
         if (max == 0) {
             return 0;
-        } else if (max < 99999){
+        } else if (max < 99999) {
             for (int i : values) {
                 if (max == i) {
-                    answer ++;
+                    answer++;
                 }
             }
         }
